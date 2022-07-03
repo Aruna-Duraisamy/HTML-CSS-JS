@@ -21,7 +21,7 @@ body {
 
 .container {
     text-align: center;
-    width: 30vw;
+    width: 50vw;
 }
 
 .progress-container {
@@ -58,9 +58,33 @@ body {
     background-color: var(--lightGray) ;
     border:1px solid var(--darkGray);
     border-radius: 50%;
-    width:10%;
+    width:30px;
+    height:30px;
 }
 
 .circle.active {
     background-color: var(--cornflowerBlue);
+}
+
+.btn {
+    background-color:  var(--cornflowerBlue);
+    color: white;
+    font-family: inherit;
+    font-size: medium;
+    border: 0;
+    border-radius: 2px;
+    cursor:pointer;
+    padding:8px 30px;
+    margin:5px;
+}
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn:disabled {
+    background-color: var(--lightGray);
+    cursor:not-allowed;
+}
+.btn:disabled:active {
+    transform: none;
 }
