@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
-
+:root{
+    --lightGray: #d3d3d3;
+    --darkGray: #474947;
+    --cornflowerBlue: #6495ed;
+}
 * {
     box-sizing: border-box;
 }
@@ -13,4 +17,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.container {
+    text-align: center;
+    width: 60vw;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    position:relative;
+}
+
+.progress-container::before {
+    content: '';
+    position: absolute;
+    top:50%;
+    left:0;
+    height:4px;
+    width:100%;
+    z-index:-1;
+    background-color: var(--lightGray);
+    transform: translateY(-25%);
+}
+
+.progress {
+    position: absolute;
+    top:50%;
+    left:0;
+    height:4px;
+    width:0%;
+    z-index:-1;
+    background-color: var(--cornflowerBlue);
+    transform: translateY(-25%);
+}
+
+.circle {
+    background-color: var(--lightGray) ;
+    border:1px solid var(--darkGray);
+    border-radius: 50%;
+    width:10%;
+}
+
+.circle.active {
+    background-color: var(--cornflowerBlue);
 }
