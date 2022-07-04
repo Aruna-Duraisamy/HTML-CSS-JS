@@ -1,5 +1,7 @@
 
 $(document).ready(function () {
+    let activeCircles = '.circle.active';
+    let circles = '.circle';
     let lastActiveCircleElement = '.circle.active:last';
     let progressLine = '.progress';
     /*
@@ -19,7 +21,9 @@ $(document).ready(function () {
         if ($(lastActiveCircleElement).prevAll().length > 1) {
             $('#previous').prop('disabled', false);
         }
-        $(progressLine).css('width', "+=211");
+
+        let newWidth = ($(activeCircles).length - 1) / ($(circles).length - 1) * 100 + '%';
+        $(progressLine).width(newWidth);
     });
     
     /*
@@ -32,7 +36,6 @@ $(document).ready(function () {
     $("#previous").click(function () {
         $(lastActiveCircleElement).removeClass('active');
     
-        
         if ($(lastActiveCircleElement).next().length != 0) {
             $('#next').prop('disabled', false);
         }
@@ -40,7 +43,8 @@ $(document).ready(function () {
             $(this).prop('disabled', true);
         }
         
-        $(progressLine).css('width', "-=211");
+        let newWidth = ($(activeCircles).length - 1) / ($(circles).length - 1) * 100 + '%';
+        $(progressLine).width(newWidth);
         
     });
     
